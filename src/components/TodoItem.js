@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import styled, { css } from "styled-components";
 import { MdDone, MdDelete } from "react-icons/md";
 import { useTodoDispatch } from "../TodoContext";
@@ -62,7 +62,7 @@ function TodoItem({ id, done, text }) {
     });
     const onRemove = () =>
     dispatch({
-       type: 'remove',
+       type: 'REMOVE',
        id
     });
 
