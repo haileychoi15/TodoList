@@ -10,13 +10,16 @@ const TodoListBlock = styled.div`
 `;
 
 function TodoList() {
-    const state = useTodoState();
-    console.log(state);
+    const todos = useTodoState();
     return (
         <TodoListBlock>
-            <TodoItem done text="2시 회의"></TodoItem>
-            <TodoItem text="리액트 공부"></TodoItem>
-            <TodoItem text="저녁 후 산책"></TodoItem>
+            {todos.map(
+                todo => <TodoItem
+                    key={todo.id}
+                    id={todo.id}
+                    text={todo.text}
+                    done={todo.done}>
+                </TodoItem>)}
         </TodoListBlock>
     );
 }
