@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import TodoItem from "./TodoItem";
+import {useTodoState} from "../TodoContext";
 
 const TodoListBlock = styled.div`
     flex: 1;
@@ -9,11 +10,13 @@ const TodoListBlock = styled.div`
 `;
 
 function TodoList() {
+    const state = useTodoState();
+    console.log(state);
     return (
         <TodoListBlock>
-            <TodoItem id="1" done text="2시 회의"></TodoItem>
-            <TodoItem id="2" text="리액트 공부"></TodoItem>
-            <TodoItem id="3" text="저녁 후 산책"></TodoItem>
+            <TodoItem done text="2시 회의"></TodoItem>
+            <TodoItem text="리액트 공부"></TodoItem>
+            <TodoItem text="저녁 후 산책"></TodoItem>
         </TodoListBlock>
     );
 }
